@@ -1,0 +1,299 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "start_timestamp": "2020-12-16T10:59:00.211Z",
+        "line": 16,
+        "name": "Verify if data can be addded by API",
+        "description": "",
+        "id": "test-to-verify-dummydataapi-by-restassured-framework;verify-if-data-can-be-addded-by-api;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1088000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Set \"Createemployee\" service api endpoint with data \"himms\" 1000 12",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Createemployee\"",
+                  "offset": 4
+                },
+                {
+                  "val": "\"himms\"",
+                  "offset": 52
+                },
+                {
+                  "val": "1000",
+                  "offset": 60
+                },
+                {
+                  "val": "12",
+                  "offset": 65
+                }
+              ],
+              "location": "stepdefinitions.SpecificationBuilder.set_Create_employee_service_api_endpoint_with_data(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2177000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Send POST HTTP request",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.send_POST_HTTP_request()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Receive valid response status code",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.receive_valid_response_status_code()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 613000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Check \"status\" showing \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 6
+                },
+                {
+                  "val": "\"success\"",
+                  "offset": 23
+                }
+              ],
+              "location": "stepdefinitions.SpecificationBuilder.check_showing(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regressionTestCreateDummyDataAPI"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-12-16T10:59:04.149Z",
+        "line": 19,
+        "name": "Verify  all data can be fetch",
+        "description": "",
+        "id": "test-to-verify-dummydataapi-by-restassured-framework;verify--all-data-can-be-fetch",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "fetch \"GetEmplyee\" data",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GetEmplyee\"",
+                  "offset": 6
+                }
+              ],
+              "location": "stepdefinitions.SpecificationBuilder.fetch_data(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 421000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Send Get HTTP request",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.send_Get_HTTP_request()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Recieve valid status code",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.recieve_valid_status_code()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regressionTestForGetEmployeeData"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-12-16T10:59:04.582Z",
+        "line": 25,
+        "name": "Verify data can be fetch by id",
+        "description": "",
+        "id": "test-to-verify-dummydataapi-by-restassured-framework;verify-data-can-be-fetch-by-id",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "fetch \"GetEmplyeeById\" data",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GetEmplyeeById\"",
+                  "offset": 6
+                }
+              ],
+              "location": "stepdefinitions.SpecificationBuilder.fetch_data(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: 1 expectation failed.\nExpected status code \u003c200\u003e but was \u003c404\u003e.\n\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)\r\n\tat io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)\r\n\tat io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:92)\r\n\tat io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)\r\n\tat io.restassured.internal.ValidatableResponseImpl.super$2$spec(ValidatableResponseImpl.groovy)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)\r\n\tat org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)\r\n\tat io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy:76)\r\n\tat io.restassured.internal.ValidatableResponseImpl.spec(ValidatableResponseImpl.groovy)\r\n\tat stepdefinitions.SpecificationBuilder.get_HTTP_request_to_getId(SpecificationBuilder.java:92)\r\n\tat ✽.Get HTTP request to getId(file:///C:/Users/minky/Desktop/TestAssignmentDummyAPI/src/test/resources/Features/Dummy.feature:27)\r\n",
+              "duration": 900000000,
+              "status": "failed"
+            },
+            "line": 27,
+            "name": "Get HTTP request to getId",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.get_HTTP_request_to_getId()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "Recieve valid status code",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.recieve_valid_status_code()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regressionTestForGetEmployeeDataById"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-12-16T10:59:05.492Z",
+        "line": 31,
+        "name": "Verify Update API updatedata corretly",
+        "description": "",
+        "id": "test-to-verify-dummydataapi-by-restassured-framework;verify-update-api-updatedata-corretly",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "update by \"UpdateEmplyeeById\" data",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"UpdateEmplyeeById\"",
+                  "offset": 10
+                }
+              ],
+              "location": "stepdefinitions.SpecificationBuilder.update_by_data(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 926000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "update HTTP request to update data",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.update_HTTP_request_to_update_data()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Recieve valid status code",
+            "match": {
+              "location": "stepdefinitions.SpecificationBuilder.recieve_valid_status_code()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Check \"status\" showing \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 6
+                },
+                {
+                  "val": "\"success\"",
+                  "offset": 23
+                }
+              ],
+              "location": "stepdefinitions.SpecificationBuilder.check_showing(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regressionTestForUpdateEmployeeDataById"
+          }
+        ]
+      }
+    ],
+    "name": "Test to verify DummyDataAPI by RestAssured Framework",
+    "description": "  I want to use this template for my feature file",
+    "id": "test-to-verify-dummydataapi-by-restassured-framework",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/Dummy.feature",
+    "tags": []
+  }
+]
