@@ -14,6 +14,8 @@ Feature: Test to verify DummyDataAPI by RestAssured Framework
     Examples: 
       | name  | salary | age |
       | himms |   1000 |  12 |
+      | John  |  15000 |  12 |
+      
 
   @regressionTestForGetEmployeeData
   Scenario: Verify  all data can be fetch

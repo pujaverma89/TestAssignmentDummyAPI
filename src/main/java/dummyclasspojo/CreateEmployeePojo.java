@@ -2,6 +2,7 @@ package dummyclasspojo;
 
 public class CreateEmployeePojo {  
 	
+	//pojo for requestjson for create employee
 	private String name; 
 	private int salary;
 	private int age; 

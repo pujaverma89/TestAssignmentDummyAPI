@@ -28,6 +28,7 @@ public class SpecificationBuilder extends UtilityApiMethods {
 	ResponseSpecification responseSpecificationresponseSpecificationTest;
 	TestData td = new TestData();
 
+	// post request for createEmployeData
 	@Given("Set {string} service api endpoint with data {string} {int} {int}")
 	public void set_Create_employee_service_api_endpoint_with_data(String string, String name, Integer salary,
 			Integer age) throws FileNotFoundException {
@@ -42,11 +43,13 @@ public class SpecificationBuilder extends UtilityApiMethods {
 				.extract().response();
 	}
 
+	// verify the response status code
 	@Then("Receive valid response status code")
 	public void receive_valid_response_status_code() {
 		assertEquals(response.getStatusCode(), 200);
 	}
 
+	// verify status coming success
 	@And("Check {string} showing {string}")
 	public void check_showing(String expectedKey, String expectedValue) {
 		String resp = response.asString();
@@ -54,6 +57,7 @@ public class SpecificationBuilder extends UtilityApiMethods {
 		assertEquals(js.get(expectedKey).toString(), expectedValue);
 	}
 
+	// verifygetEmplyeedata by pathparameter
 	@Given("fetch {string} data")
 	public void fetch_data(String string) throws FileNotFoundException {
 		requestSpecification = given().spec(requestSpecification());
@@ -63,26 +67,25 @@ public class SpecificationBuilder extends UtilityApiMethods {
 	public void send_Get_HTTP_request() {
 		responseSpecification = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON)
 				.build();
-	    response = requestSpecification.when().get(resourcePathGetEmployees).then().spec(responseSpecification)
+		response = requestSpecification.when().get(resourcePathGetEmployees).then().spec(responseSpecification)
 				.extract().response();
 		String resp = response.asString();
 		JsonPath js = new JsonPath(resp);
-		//String ids = js.get("data[00].id");
-		
-		for(int i=0;i<=20;i++)
-		{ 
-			String ids = js.get("data["+i+"].id").toString();
+		// String ids = js.get("data[00].id");
+
+		for (int i = 0; i <= 20; i++) {
+			String ids = js.get("data[" + i + "].id").toString();
 			System.out.println(ids);
-			
-			
 		}
-		}
+	}
 
 	@Then("Recieve valid status code")
 	public void recieve_valid_status_code() {
 		assertEquals(response.getStatusCode(), 200);
 	}
 
+	// verifying by id to check if API working fine
+	// using static data as api respnse not coming for new creation data
 	@When("Get HTTP request to getId")
 	public void get_HTTP_request_to_getId() throws FileNotFoundException {
 
@@ -94,10 +97,10 @@ public class SpecificationBuilder extends UtilityApiMethods {
 
 	}
 
+	// updated with static data as API doesn't work correctly and updating data
 	@Given("update by {string} data")
 	public void update_by_data(String string) throws FileNotFoundException {
 		requestSpecification = given().spec(requestSpecification());
-
 	}
 
 	@When("update HTTP request to update data")
@@ -107,7 +110,6 @@ public class SpecificationBuilder extends UtilityApiMethods {
 		response = requestSpecification.when().put(resourcePathUpdateEmployeeId).then().spec(responseSpecification)
 				.extract().response();
 		assertEquals(response.getStatusCode(), 200);
-
 	}
 
 }

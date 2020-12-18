@@ -27,9 +27,9 @@ public class UtilityApiMethods {
 	public final String resourcePathDeleteEmployeeId = "/delete/{id}";
 	public static RequestSpecification requestSpecification;
 	public ResponseSpecification responseSpecification; 
-	
 	Response response;
-
+    
+   
 	public RequestSpecification requestSpecification() throws FileNotFoundException {
 		
 		if (requestSpecification == null) {
@@ -42,9 +42,6 @@ public class UtilityApiMethods {
 		else
 		return requestSpecification;
 	}
-
-	
-
 	// JSON extraction in string
 	public String getJsonPath(Response response, String key) {
 		String str = response.asString();
